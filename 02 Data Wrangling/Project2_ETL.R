@@ -38,3 +38,60 @@ cat(sql)
 df <- data.frame(fromJSON(getURL(URLencode('129.152.144.84:5001/rest/native/?query="select * from COD"'),httpheader=c(DB='jdbc:oracle:thin:@129.152.144.84:1521/PDBF15DV.usuniversi01134.oraclecloud.internal', USER='cs329e_riw223', PASS='orcl_riw223', MODE='native_mode', MODEL='model', returnDimensions = 'False', returnFor = 'JSON'), verbose = TRUE), ))
 summary(df)
 head(df)
+
+#Data Wrangling
+#Dataframe without confidence interval
+dfWOci <- c()
+for (d in measures) {
+    if(grepl("CI",d) == FALSE) {
+      dfWOci <- c(dfWOci,d)
+    }
+}
+
+#Dataframe under age 1
+Young <- c()
+for (d in dfWOci) {
+  if(grepl("A_",d) == TRUE) {
+    Young <- c(Young,d)
+  }
+}
+
+#Dataframe from age 1-14
+Adolescent <- c()
+for (d in dfWOci) {
+  if(grepl("B_",d) == TRUE) {
+    Adolescent <- c(Adolescent,d)
+  }
+}
+
+#Dataframe for ages 15-24
+Teen <- c()
+for (d in dfWOci) {
+  if(grepl("C_",d) == TRUE) {
+    Teen <- c(Teen,d)
+  }
+}
+
+#Datafrom for ages 25-44
+Adult <- c()
+for (d in dfWOci) {
+  if(grepl("D_",d) == TRUE) {
+    Adult <- c(Adult,d)
+  }
+}
+
+#Dataframe for ages 45-64
+Mature <- c()
+for (d in dfWOci) {
+  if(grepl("E_",d) == TRUE) {
+    Mature <- c(Mature,d)
+  }
+}
+
+#Dataframe for ages 65+
+Old <- c()
+for (d in dfWOci) {
+  if(grepl("F_",d) == TRUE) {
+    Old <- c(Old,d)
+  }
+}
