@@ -1,0 +1,15 @@
+---
+title: "LeadingCauseOfDeath.Rmd"
+author: "Herbert Gutierrez, Ryan Wechter"
+date: "September 30, 2015"
+output: html_document
+---
+
+#Leading Cause of Death in the United States
+
+####Project 2 in Dr. Cannata's CS 329E Data Visualization class.
+
+####RStudio Configuration:
+```{r}
+sessionInfo()
+```
