@@ -46,5 +46,6 @@ df %>% select(CAUSE_NAME,STATE,AADR,YEAR) %>% filter(STATE == "Texas", (CAUSE_NA
   
 df %>% select(STATE,YEAR,CAUSE_NAME,AADR) %>% filter(STATE == "United States" | STATE == "Texas" |STATE == "District of Columbia" |STATE == "Colorado" |STATE == "Louisiana",CAUSE_NAME == "All Causes") %>% ggplot(aes(x=YEAR,y = AADR, color = STATE)) + geom_point() + geom_line() + labs(title='Time Series Change in Death Rate by State') + labs(x="Year", y="Age-Adjusted Death Rate per 100,000 people")
 
-df %>% select(STATE,AADR,YEAR,CAUSE_NAME) %>% filter(CAUSE_NAME == "Cancer",YEAR=="2004") %>% ggplot(aes(y=STATE,x=AADR)) + geom_bar() 
+df %>% select(STATE,AADR,YEAR,CAUSE_NAME) %>% filter(CAUSE_NAME == "Suicide",YEAR=="2013") %>%  ggplot(aes(x=STATE,y=AADR, fill=STATE)) + geom_bar(stat = "identity") + coord_flip() + theme(legend.position="none") + labs(y = "Age-Adjusted Death Ratio per 100,000 People")
+
 
