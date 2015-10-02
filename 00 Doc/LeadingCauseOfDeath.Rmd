@@ -5,7 +5,7 @@ date: "September 30, 2015"
 output: html_document
 ---
 
-#Leading Cause of Death in the United States by State
+##Leading Cause of Death in the United States by State
 ###CS329E: Project 2
 
 
@@ -16,23 +16,41 @@ sessionInfo()
 ```
 
 
-##Loading our data from Oracle Database
+##Loading our data from the Oracle Database
 From the SQL code we loaded our data in the Oracle Database in which we are now able to call from and use our data frame.
 ```{r}
 source("../02 Data Wrangling/Project2_ETL.R", echo = TRUE)
 ```
+
+
+
 
 ##Graph 1: Leading Causes of Death in Texas (1999-2013)
 ```{r}
 source("../02 Data Wrangling/Graph1.R", echo = TRUE)
 ```
 
+####Interpretation
+This Graph shows the leading causes of death in Texas from 1999-2013 per 100,000 people. One can clearly see that heart disease is the highest value throughout the years followed by cancer. Furthermore, there is a decrease of these two values as the years progress. This can be due to the fact that a significant amount of research, medical advances, and general awareness have been able to reduce the amount of deaths. However, when looking at something like Alzheimer's disease which has not had that many medical breakthroughts, it has remained relatively the same.
+ 
+  
+  
+  
 ##Graph 2: Selected States' Death Rates (1999-2013)
 ```{r}
 source("../02 Data Wrangling/Graph2.R", echo = TRUE)
 ```
 
+####Interpretation
+This graph visualizes the amount of death in each state per 100,000 people. The states selected, along with an overall value for the United States were selected on geographical location and interest. From the states selected, Lousiana seems to have the highest amount of deaths while Colorado has significantly less. However, throughout the years, in all states and in the United States, there appears to be a decrease in the amount of deaths. This can be due to the fact that medical advances have changed for the better throughout the years. Furhtermore, the active lifestyle of Colorado could also be a factor for its low death rate.
+  
+ 
+  
+  
 ##Graph 3: Suicide Rates in 2013 for all states
 ```{r}
 source("../02 Data Wrangling/Graph3.R", echo = TRUE)
 ```
+
+####Interpretation
+This bar graphs shows the amount of deaths per 100,000 people in each state in 2013. From the graph Montana has the highest death rate followed by Alaska, while New Jersey and the District of Columbia have the lowest. Texas also seems to be one of the states with the lowest suicide rates in 2013. 
