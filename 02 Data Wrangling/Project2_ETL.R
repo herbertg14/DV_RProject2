@@ -13,10 +13,12 @@ require("extrafont")
 require("lubridate")
 
 
-'''setwd("~/DataVisualization/DV_RProject2/02 Data Wrangling")
+
+setwd("~/DataVisualization/DV_RProject2/02 Data Wrangling")
 
 file_path <- "./01\ Data/LeadingCausesStateYear.csv"
 
+"""
 df <- read.csv(file_path, stringsAsFactors = FALSE)
 
 str(df) # Uncomment this and  run just the lines to here to get column types to use for getting the list of measures.
@@ -41,7 +43,8 @@ if( length(measures) > 1 || ! is.na(measures)) {
   }
 }
 sql <- paste(sql, ");")
-cat(sql)'''
+cat(sql)
+"""
 
 
 
