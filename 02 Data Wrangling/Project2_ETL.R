@@ -1,8 +1,19 @@
-require(tidyr)
-require(dplyr)
-require(ggplot2)
+require("ggplot2")
+require("ggthemes")
+require("gplots")
+require("grid")
+require("RCurl")
+require("reshape2")
+require("rstudio")
+require("tableplot")
+require("tidyr")
+require("dplyr")
+require("jsonlite")
+require("extrafont")
+require("lubridate")
 
-setwd("/Users/Ryan_Wechter/DataVisualization/DV_RProject2")
+
+'''setwd("~/DataVisualization/DV_RProject2/02 Data Wrangling")
 
 file_path <- "./01\ Data/LeadingCausesStateYear.csv"
 
@@ -30,7 +41,7 @@ if( length(measures) > 1 || ! is.na(measures)) {
   }
 }
 sql <- paste(sql, ");")
-cat(sql)
+cat(sql)'''
 
 
 
