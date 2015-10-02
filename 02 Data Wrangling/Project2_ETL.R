@@ -42,10 +42,10 @@ head(df)
 #Data Wrangling
 #Collection without confidence interval
 
-df %>% select(CAUSE_NAME,STATE,AADR,YEAR) %>% filter(STATE == "Texas", (CAUSE_NAME == "Diabetes" | CAUSE_NAME == "Diseases of Heart"| CAUSE_NAME == "Alzheimers disease"| CAUSE_NAME == "Stroke"| CAUSE_NAME == "Chronic liver disease and cirrhosis"| CAUSE_NAME == "Cancer")) %>% ggplot(aes(x = YEAR, y = AADR, color = CAUSE_NAME)) + geom_point() + labs(title='Texas Leading COD Time Series') + labs(x="Year", y="Age-Adjusted Death Rate per 100,000 people") +geom_line()
+df %>% select(CAUSE_NAME,STATE,AADR,YEAR) %>% filter(STATE == "Texas", (CAUSE_NAME == "Diabetes" | CAUSE_NAME == "Diseases of Heart"| CAUSE_NAME == "Alzheimers disease"| CAUSE_NAME == "Stroke"| CAUSE_NAME == "Chronic liver disease and cirrhosis"| CAUSE_NAME == "Cancer")) %>% ggplot(aes(x = YEAR, y = AADR, color = CAUSE_NAME)) + geom_point() + labs(title='Texas Leading COD 1999-2013') + labs(x="Year", y="Age-Adjusted Death Rate per 100,000 people") +geom_line()
   
-df %>% select(STATE,YEAR,CAUSE_NAME,AADR) %>% filter(STATE == "United States" | STATE == "Texas" |STATE == "District of Columbia" |STATE == "Colorado" |STATE == "Louisiana",CAUSE_NAME == "All Causes") %>% ggplot(aes(x=YEAR,y = AADR, color = STATE)) + geom_point() + geom_line() + labs(title='Time Series Change in Death Rate by State') + labs(x="Year", y="Age-Adjusted Death Rate per 100,000 people")
+df %>% select(STATE,YEAR,CAUSE_NAME,AADR) %>% filter(STATE == "United States" | STATE == "Texas" |STATE == "District of Columbia" |STATE == "Colorado" |STATE == "Louisiana",CAUSE_NAME == "All Causes") %>% ggplot(aes(x=YEAR,y = AADR, color = STATE)) + geom_point() + geom_line() + labs(title='Time Series Change in Death Rate by State 1999 - 2013') + labs(x="Year", y="Age-Adjusted Death Rate per 100,000 People")
 
-df %>% select(STATE,AADR,YEAR,CAUSE_NAME) %>% filter(CAUSE_NAME == "Suicide",YEAR=="2013") %>%  ggplot(aes(x=STATE,y=AADR, fill=STATE)) + geom_bar(stat = "identity") + coord_flip() + theme(legend.position="none") + labs(y = "Age-Adjusted Death Ratio per 100,000 People")
+df %>% select(STATE,AADR,YEAR,CAUSE_NAME) %>% filter(CAUSE_NAME == "Suicide",YEAR=="2013") %>%  ggplot(aes(x=reorder(STATE,AADR),y=AADR, fill=STATE)) + geom_bar(stat = "identity") + coord_flip() + theme(legend.position="none") + labs(x = "State",y = "Age-Adjusted Death Ratio per 100,000 People",title = "Suicide Rates by State in 2013")
 
 
