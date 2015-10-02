@@ -42,13 +42,9 @@ head(df)
 #Data Wrangling
 #Collection without confidence interval
 
-ndf <- df %>% select(starts_with("CI"))
-dfWOci <- setdiff(df,ndf)
-
-dfWOci %>% select(contains("CANCER"),contains("COMP"),contains("BirthDEF"),contains("Injury"),contains("Homicide"),contains("suicide"),contains("heartdis"),contains("hiv")) %>% ggplot(aes(x = (names(dfWOCI), y = )))
+df %>% select(CAUSE_NAME,STATE,AADR,YEAR) %>% filter(STATE == "Texas", (CAUSE_NAME == "Diabetes" | CAUSE_NAME == "Diseases of Heart"| CAUSE_NAME == "Alzheimers disease"| CAUSE_NAME == "Stroke"| CAUSE_NAME == "Chronic liver disease and cirrhosis"| CAUSE_NAME == "Cancer")) %>% ggplot(aes(x = YEAR, y = AADR, color = CAUSE_NAME)) + geom_point() + labs(title='Texas Leading COD Time Series') + labs(x="Year", y="Age-Adjusted Death Rate per 100,000 people") +geom_line()
   
-filter(price_percent <= .20 | price_percent >= .80) %>% ggplot(aes(x = price, y = carat, color = cut)) + geom_point()
+df %>% select(STATE,YEAR,CAUSE_NAME,AADR) %>% filter(STATE == "United States" | STATE == "Texas" |STATE == "District of Columbia" |STATE == "Colorado" |STATE == "Louisiana",CAUSE_NAME == "All Causes") %>% ggplot(aes(x=YEAR,y = AADR, color = STATE)) + geom_point() + geom_line() + labs(title='Time Series Change in Death Rate by State') + labs(x="Year", y="Age-Adjusted Death Rate per 100,000 people")
 
-
-
+df %>% select(STATE,AADR,YEAR,CAUSE_NAME) %>% filter(CAUSE_NAME == "Cancer",YEAR=="2004") %>% ggplot(aes(y=STATE,x=AADR)) + geom_bar() 
 
