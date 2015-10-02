@@ -5,7 +5,7 @@ date: "September 30, 2015"
 output: html_document
 ---
 
-##Leading Cause of Death in the United States by State
+##Selected Causes of Death in the United States by State
 ###CS329E: Project 2
 
 
@@ -17,7 +17,7 @@ sessionInfo()
 
 
 ##Loading our data from the Oracle Database
-From the SQL code we loaded our data in the Oracle Database in which we are now able to call from and use our data frame.
+We modified the R script given to us to create a SQL code that would create the table in the Oracle Database.  We then loaded our data and could connect to the database to create our data frame in RStudio.
 ```{r}
 source("../02 Data Wrangling/Project2_ETL.R", echo = TRUE)
 ```
@@ -25,13 +25,13 @@ source("../02 Data Wrangling/Project2_ETL.R", echo = TRUE)
 
 
 
-##Graph 1: Leading Causes of Death in Texas (1999-2013)
+##Graph 1: Selected Causes of Death in Texas (1999-2013)
 ```{r}
 source("../02 Data Wrangling/Graph1.R", echo = TRUE)
 ```
 
 ####Interpretation
-This Graph shows the leading causes of death in Texas from 1999-2013 per 100,000 people. One can clearly see that heart disease is the highest value throughout the years followed by cancer. Furthermore, there is a decrease of these two values as the years progress. This can be due to the fact that a significant amount of research, medical advances, and general awareness have been able to reduce the amount of deaths. However, when looking at something like Alzheimer's disease which has not had that many medical breakthroughts, it has remained relatively the same.
+This Graph shows the selected causes of death in Texas from 1999-2013 per 100,000 people. One can clearly see that heart disease is the highest value throughout the years followed by cancer. Furthermore, there is a decrease of these two values as the years progress. This can be due to the fact that a significant amount of research, medical advances, and general awareness have been able to reduce the amount of deaths. However, when looking at something like Alzheimer's disease which has not had that many medical breakthroughts, it has remained relatively the same.
  
   
   
@@ -53,4 +53,4 @@ source("../02 Data Wrangling/Graph3.R", echo = TRUE)
 ```
 
 ####Interpretation
-This bar graphs shows the amount of deaths per 100,000 people in each state in 2013. From the graph Montana has the highest death rate followed by Alaska, while New Jersey and the District of Columbia have the lowest. Texas also seems to be one of the states with the lowest suicide rates in 2013. 
+This bar graphs shows the number of suicides per 100,000 people in each state in 2013. From the graph Montana has the highest suicide rate followed by Alaska, while New Jersey and the District of Columbia have the lowest. Texas also seems to be one of the states with the lowest suicide rates in 2013. 
