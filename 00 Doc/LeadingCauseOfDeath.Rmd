@@ -13,3 +13,9 @@ output: html_document
 ```{r}
 sessionInfo()
 ```
+
+
+
+```{r}
+source("../02 Data Wrangling/Project2_ETL.R", echo = TRUE)
+```
