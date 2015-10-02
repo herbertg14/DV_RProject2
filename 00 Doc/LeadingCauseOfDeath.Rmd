@@ -5,9 +5,10 @@ date: "September 30, 2015"
 output: html_document
 ---
 
-#Leading Cause of Death in the United States
+#Leading Cause of Death in the United States by State
+###CS329E: Project 2
 
-####Project 2 in Dr. Cannata's CS 329E Data Visualization class.
+
 
 ####RStudio Configuration:
 ```{r}
@@ -15,19 +16,23 @@ sessionInfo()
 ```
 
 
-
+##Loading our data from Oracle Database
+From the SQL code we loaded our data in the Oracle Database in which we are now able to call from and use our data frame.
 ```{r}
 source("../02 Data Wrangling/Project2_ETL.R", echo = TRUE)
 ```
 
+##Graph 1: Leading Causes of Death in Texas (1999-2013)
 ```{r}
 source("../02 Data Wrangling/Graph1.R", echo = TRUE)
 ```
 
+##Graph 2: Selected States' Death Rates (1999-2013)
 ```{r}
 source("../02 Data Wrangling/Graph2.R", echo = TRUE)
 ```
 
+##Graph 3: Suicide Rates in 2013 for all states
 ```{r}
 source("../02 Data Wrangling/Graph3.R", echo = TRUE)
 ```
