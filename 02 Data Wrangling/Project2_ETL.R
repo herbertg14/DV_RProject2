@@ -4,21 +4,21 @@ require(ggplot2)
 
 setwd("/Users/Ryan_Wechter/DataVisualization/DV_RProject2")
 
-file_path <- "./01\ Data/LEADINGCAUSESOFDEATH.csv"
+file_path <- "./01\ Data/LeadingCausesStateYear.csv"
 
 df <- read.csv(file_path, stringsAsFactors = FALSE)
 
 str(df) # Uncomment this and  run just the lines to here to get column types to use for getting the list of measures.
 
-dimensions <- c("CHSI_State_Name","CHSI_State_Abbr", "CHSI_County_Name")
+measures <- c("YEAR","DEATHS","AADR")
 
 # Get rid of special characters in each column.
 # Google ASCII Table to understand the following:
 
-measures <- setdiff(names(df), dimensions)
+dimensions <- setdiff(names(df), measures)
 
 sql <- paste("CREATE TABLE", "COD", "(\n")
-if( length(measures) > 1 || ! is.na(dimensions)) {
+if( length(dimensions) > 1 || ! is.na(dimensions)) {
   for(d in dimensions) {
     sql <- paste(sql, paste(d, "varchar2(4000),\n"))
   }
@@ -43,5 +43,12 @@ head(df)
 #Collection without confidence interval
 
 ndf <- df %>% select(starts_with("CI"))
-nndf <- setdiff(df,ndf)
+dfWOci <- setdiff(df,ndf)
+
+dfWOci %>% select(contains("CANCER"),contains("COMP"),contains("BirthDEF"),contains("Injury"),contains("Homicide"),contains("suicide"),contains("heartdis"),contains("hiv")) %>% ggplot(aes(x = (names(dfWOCI), y = )))
+  
+filter(price_percent <= .20 | price_percent >= .80) %>% ggplot(aes(x = price, y = carat, color = cut)) + geom_point()
+
+
+
 
