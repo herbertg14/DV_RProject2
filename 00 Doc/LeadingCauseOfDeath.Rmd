@@ -19,3 +19,15 @@ sessionInfo()
 ```{r}
 source("../02 Data Wrangling/Project2_ETL.R", echo = TRUE)
 ```
+
+```{r}
+source("../02 Data Wrangling/Graph1.R", echo = TRUE)
+```
+
+```{r}
+source("../02 Data Wrangling/Graph2.R", echo = TRUE)
+```
+
+```{r}
+source("../02 Data Wrangling/Graph3.R", echo = TRUE)
+```
