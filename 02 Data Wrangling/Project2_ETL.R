@@ -175,3 +175,6 @@ for (d in dfWOci) {
     Suicide <- c(Suicide,d)
   }
 }
+
+
+df %>% select(matches("^[^CI]")) %>% View()
